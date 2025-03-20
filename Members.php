@@ -29,7 +29,7 @@ class Members {
             echo "<ul>";
             foreach ($members as $member) {
                 echo "<li>{$member['name']}";
-                $this->renderTree($member['id']); // Recursive call for children
+                $this->renderTree($member['id']); // Used Recursive func
                 echo "</li>";
             }
             echo "</ul>";

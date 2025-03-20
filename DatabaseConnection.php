@@ -26,7 +26,7 @@ class DatabaseConnection{
                 FOREIGN KEY (parent_id) REFERENCES members(id) ON DELETE CASCADE
             )");
 
-           // -------------------Insert Initial Data (only if table is empty)---------------------
+           // -------------------Insert Initial Data if table is empty---------------------
              $this->insertInitialData();
 
         } catch (PDOException $e) {
@@ -34,7 +34,7 @@ class DatabaseConnection{
         }
     }
 
-  // -------------------Insert Initial Data (only if table is empty)---------------------
+  // -------------------Insert Initial Data if table is empty---------------------
     private function insertInitialData() {
         $stmt = $this->pdo->query("SELECT COUNT(*) FROM members");
         $count = $stmt->fetchColumn();
